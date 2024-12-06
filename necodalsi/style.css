@@ -1,0 +1,50 @@
+div.home {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1440px;
+}
+
+div.home > h1 {
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+div.group1 {
+    margin-top: 138px;
+    margin-left: 160px;
+    display: flex;
+    max-width: 1121px;
+}
+
+div.group1 > div {
+    position: relative;
+}
+
+div.group1 > div > img {
+    position: absolute;
+}
+
+div.group1 > div > img:last-child {
+    top: -64px;
+    left: 64px;
+}
+
+div.group1 > p {
+    color: #050706;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+
+    max-height: inherit;
+    max-width: 352px;
+}
