@@ -16,8 +16,6 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background-color: #f0f0f0;
 }
 
@@ -25,7 +23,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1440px;
     padding-bottom: 40px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -249,8 +246,10 @@ img[alt=main-image] {
     background: #FFF;
     box-shadow: 0px 4px 15px 1px rgba(85, 85, 85, 0.25);
 
-    padding-left: 32px;
+    padding: 32px;
     margin-top: 20px;
+
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -265,8 +264,9 @@ img[alt=main-image] {
     
     border-radius: 0px 0px 20px 20px;
     background: var(--Accent);
-    position: relative;
-    bottom: 25px;
+
+    position: absolute;
+    bottom: 69px;
 
     flex-shrink: 0;
 }
