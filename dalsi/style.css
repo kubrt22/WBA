@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.main {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1120px;
+}
+
+h1 {
+    font-size: 4em;
+    margin: 60 0 60 0;
+    text-align: center;
+}
+
+img[alt="fort"] {
+    max-width: 1120px;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border: 3px solid grey;
+    border-radius: 15px;
+}
+
+.item:hover {
+    animation: pulse 0.01s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #fff;
+    }
+    49% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #000;
+    }
+    100% {
+        background-color: #000;
+    }
+}
+
+.text {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "main main . text1"
+    "main main text2 .";
+    gap: 0 20px;
+}
+
+.text > div {
+    position: relative;
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    font-size: 1rem;
+}
+
+.text > div::before {
+    content: '';
+    position: absolute;
+    inset: -25%;
+    background-image: conic-gradient(#ff0000, #0000ff, #00ff00, #ff0000);
+    animation: circle 0.5s linear infinite;
+    z-index: -1;
+}
+
+.text > div:first-child {
+    grid-area: main;
+}
+.text > div:nth-child(2) {
+    grid-area: text1;
+}
+.text > div:nth-child(3) {
+    grid-area: text2;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (width < 1000px) {
+    .text > div {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .item {
+        height: 60px;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .text {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "main main"
+        "main main"
+        "text1 text2";
+        gap: 5px;
+    }
+    .text > div {
+        padding: 10px;
+    }
+}
